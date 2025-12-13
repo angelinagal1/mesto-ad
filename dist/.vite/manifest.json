@@ -1,0 +1,38 @@
+{
+  "index.html": {
+    "file": "assets/index-CnAyWkjb.js",
+    "name": "index",
+    "src": "index.html",
+    "isEntry": true,
+    "css": [
+      "assets/index-DKwl_nIp.css"
+    ],
+    "assets": [
+      "assets/Inter-Regular-CuH2jfV0.woff2",
+      "assets/Inter-Medium-BzdGPsfa.woff2",
+      "assets/Inter-Black-B5fx6SzK.woff2",
+      "assets/logo-DQ1BIEMY.svg",
+      "assets/avatar-jDl9RI_U.jpg"
+    ]
+  },
+  "src/images/avatar.jpg": {
+    "file": "assets/avatar-jDl9RI_U.jpg",
+    "src": "src/images/avatar.jpg"
+  },
+  "src/images/logo.svg": {
+    "file": "assets/logo-DQ1BIEMY.svg",
+    "src": "src/images/logo.svg"
+  },
+  "src/vendor/fonts/Inter-Black.woff2": {
+    "file": "assets/Inter-Black-B5fx6SzK.woff2",
+    "src": "src/vendor/fonts/Inter-Black.woff2"
+  },
+  "src/vendor/fonts/Inter-Medium.woff2": {
+    "file": "assets/Inter-Medium-BzdGPsfa.woff2",
+    "src": "src/vendor/fonts/Inter-Medium.woff2"
+  },
+  "src/vendor/fonts/Inter-Regular.woff2": {
+    "file": "assets/Inter-Regular-CuH2jfV0.woff2",
+    "src": "src/vendor/fonts/Inter-Regular.woff2"
+  }
+}
