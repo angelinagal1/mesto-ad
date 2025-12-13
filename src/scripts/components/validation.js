@@ -1,3 +1,31 @@
+// Проверка конкретного поля с учетом его типа
+const validateFieldByType = (inputElement, errorMessage) => {
+  // Для полей с pattern (имя, название карточки)
+  if (inputElement.validity.patternMismatch) {
+    return inputElement.dataset.errorMessage || errorMessage;
+  }
+  
+  // Для полей URL (ссылки)
+  if (inputElement.validity.typeMismatch && inputElement.type === 'url') {
+    return 'Введите корректный URL';
+  }
+  
+  // Стандартные сообщения
+  if (inputElement.validity.valueMissing) {
+    return 'Это обязательное поле';
+  }
+  
+  if (inputElement.validity.tooShort) {
+    return `Минимальная длина — ${inputElement.minLength} символа`;
+  }
+  
+  if (inputElement.validity.tooLong) {
+    return `Максимальная длина — ${inputElement.maxLength} символов`;
+  }
+  
+  return errorMessage;
+};
+
 // Показать ошибку
 const showInputError = (formElement, inputElement, errorMessage, settings) => {
   const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
@@ -18,16 +46,9 @@ const hideInputError = (formElement, inputElement, settings) => {
 
 // Проверить валидность поля
 const checkInputValidity = (formElement, inputElement, settings) => {
-  const customErrorMessage = inputElement.dataset.errorMessage;
-  
   if (!inputElement.validity.valid) {
-    // Если есть кастомное сообщение и это ошибка patternMismatch
-    if (customErrorMessage && inputElement.validity.patternMismatch) {
-      showInputError(formElement, inputElement, customErrorMessage, settings);
-    } else {
-      // Иначе показываем стандартное сообщение браузера
-      showInputError(formElement, inputElement, inputElement.validationMessage, settings);
-    }
+    const errorMessage = validateFieldByType(inputElement, inputElement.validationMessage);
+    showInputError(formElement, inputElement, errorMessage, settings);
   } else {
     hideInputError(formElement, inputElement, settings);
   }
@@ -95,11 +116,11 @@ export const clearValidation = (formElement, settings) => {
   const inputList = Array.from(formElement.querySelectorAll(settings.inputSelector));
   const buttonElement = formElement.querySelector(settings.submitButtonSelector);
   
-  // Скрываем все ошибки
+  // Скрыть все ошибки
   inputList.forEach((inputElement) => {
     hideInputError(formElement, inputElement, settings);
   });
   
-  // Делаем кнопку неактивной
+  // Кнопка становится неактивной
   disableSubmitButton(buttonElement, settings);
 };
