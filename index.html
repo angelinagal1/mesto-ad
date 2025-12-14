@@ -39,49 +39,46 @@
       <footer class="footer page__section">
         <p class="footer__copyright">© 2025 Mesto Russia</p>
       </footer>
+    </div> <!-- Закрываем .page__content -->
+
+    <!-- Попапы -->
+    <div class="popup popup_type_edit">
+      <div class="popup__content">
+        <button type="button" class="popup__close"></button>
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <form class="popup__form" name="edit-profile" novalidate>
+          <label class="popup__label">
+            <input
+              type="text"
+              name="user-name"
+              id="user-name"
+              class="popup__input popup__input_type_name"
+              placeholder="Имя"
+              minlength="2"
+              maxlength="40"
+              required
+              pattern="[A-Za-zА-Яа-яЁё\s\-]+"
+              data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы"
+            />
+            <span class="popup__error" id="user-name-error"></span>
+          </label>
+          <label class="popup__label">
+            <input
+              type="text"
+              name="user-description"
+              id="user-description"
+              class="popup__input popup__input_type_description"
+              placeholder="Занятие"
+              minlength="2"
+              maxlength="200"
+              required
+            />
+            <span class="popup__error" id="user-description-error"></span>
+          </label>
+          <button type="submit" class="button popup__button">Сохранить</button>
+        </form>
+      </div>
     </div>
-<div class="popup popup_type_edit">
-  <div class="popup__content">
-    <button type="button" class="popup__close"></button>
-    <h3 class="popup__title">Редактировать профиль</h3>
-    <form class="popup__form" name="edit-profile" novalidate>
-      <label class="popup__label">
-        <input
-          type="text"
-          name="user-name"
-          id="user-name"
-          class="popup__input popup__input_type_name"
-          placeholder="Имя"
-          minlength="2"
-          maxlength="40"
-          required
-          pattern="[A-Za-zА-Яа-яЁё\s\-]+"
-          data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы"
-        />
-        <span class="popup__error" id="user-name-error"></span>
-      </label>
-      <label class="popup__label">
-        <input
-          type="text"
-          name="user-description"
-          id="user-description"
-          class="popup__input popup__input_type_description"
-          placeholder="Занятие"
-          minlength="2"
-          maxlength="200"
-          required
-        />
-        <span class="popup__error" id="user-description-error"></span>
-      </label>
-      <button
-        type="submit"
-        class="button popup__button"
-      >
-        Сохранить
-      </button>
-    </form>
-  </div>
-</div>
 
     <div class="popup popup_type_new-card">
       <div class="popup__content">
@@ -114,12 +111,7 @@
             />
             <span class="popup__error popup__error_visible" id="place-link-error"></span>
           </label>
-          <button
-            type="submit"
-            class="button popup__button"
-          >
-            Создать
-          </button>
+          <button type="submit" class="button popup__button">Создать</button>
         </form>
       </div>
     </div>
@@ -141,17 +133,21 @@
             />
             <span class="popup__error popup__error_visible" id="user-avatar-error"></span>
           </label>
-          <button
-            type="submit"
-            class="button popup__button"
-          >
-            Сохранить
-          </button>
+          <button type="submit" class="button popup__button">Сохранить</button>
         </form>
       </div>
     </div>
+
+    <!-- Попап для изображения (его нет в предоставленном коде, но должен быть) -->
+    <div class="popup popup_type_image">
+      <div class="popup__content popup__content_content_image">
+        <button type="button" class="popup__close"></button>
+        <img class="popup__image" src="" alt="" />
+        <p class="popup__caption"></p>
+      </div>
     </div>
 
+    <!-- Скрипты и шаблоны -->
     <script src="./src/scripts/index.js" defer type="module"></script>
 
     <template id="card-template">
