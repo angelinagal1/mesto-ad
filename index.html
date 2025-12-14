@@ -39,7 +39,7 @@
       <footer class="footer page__section">
         <p class="footer__copyright">© 2025 Mesto Russia</p>
       </footer>
-    </div> <!-- Закрываем .page__content -->
+    </div>
 
     <!-- Попапы -->
     <div class="popup popup_type_edit">
@@ -75,7 +75,7 @@
             />
             <span class="popup__error" id="user-description-error"></span>
           </label>
-          <button type="submit" class="button popup__button">Сохранить</button>
+          <button type="submit" class="button popup__button popup__button_disabled" disabled>Сохранить</button>
         </form>
       </div>
     </div>
@@ -97,7 +97,7 @@
               required
               pattern=".*\S+.*"
             />
-            <span class="popup__error popup__error_visible" id="place-name-error"></span>
+            <span class="popup__error" id="place-name-error"></span>
           </label>
           <label class="popup__label">
             <input
@@ -109,9 +109,9 @@
               required
               pattern="https?://.+"
             />
-            <span class="popup__error popup__error_visible" id="place-link-error"></span>
+            <span class="popup__error" id="place-link-error"></span>
           </label>
-          <button type="submit" class="button popup__button">Создать</button>
+          <button type="submit" class="button popup__button popup__button_disabled" disabled>Создать</button>
         </form>
       </div>
     </div>
@@ -131,14 +131,14 @@
               required
               pattern="https?://.+"
             />
-            <span class="popup__error popup__error_visible" id="user-avatar-error"></span>
+            <span class="popup__error" id="user-avatar-error"></span>
           </label>
-          <button type="submit" class="button popup__button">Сохранить</button>
+          <button type="submit" class="button popup__button popup__button_disabled" disabled>Сохранить</button>
         </form>
       </div>
     </div>
 
-    <!-- Попап для изображения (его нет в предоставленном коде, но должен быть) -->
+    <!-- Попап для изображения -->
     <div class="popup popup_type_image">
       <div class="popup__content popup__content_content_image">
         <button type="button" class="popup__close"></button>
