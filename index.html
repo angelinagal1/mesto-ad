@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./src/pages/index.css" />
   </head>
   <body class="page">
+    <!-- Основной контент страницы -->
     <div class="page__content">
       <header class="header page__section">
         <img
@@ -19,7 +20,9 @@
           class="logo header__logo"
         />
       </header>
+      
       <main class="content">
+        <!-- Секция профиля пользователя -->
         <section class="profile page__section">
           <div
             class="profile__image"
@@ -27,24 +30,29 @@
           ></div>
           <div class="profile__info">
             <h1 class="profile__title">Жак-Ив Кусто</h1>
-            <button class="profile__edit-button" type="button"></button>
+            <button class="profile__edit-button" type="button" aria-label="Редактировать профиль"></button>
             <p class="profile__description">Исследователь океана</p>
           </div>
-          <button class="profile__add-button" type="button"></button>
+          <button class="profile__add-button" type="button" aria-label="Добавить новое место"></button>
         </section>
+        
+        <!-- Секция для карточек мест -->
         <section class="places page__section">
           <ul class="places__list"></ul>
         </section>
       </main>
+      
       <footer class="footer page__section">
         <p class="footer__copyright">© 2025 Mesto Russia</p>
       </footer>
-    </div> <!-- Закрываем .page__content -->
+    </div> <!-- Закрытие .page__content -->
 
-    <!-- Попапы -->
+    <!-- Всплывающие окна (попапы) -->
+
+    <!-- Попап редактирования профиля -->
     <div class="popup popup_type_edit">
       <div class="popup__content">
-        <button type="button" class="popup__close"></button>
+        <button type="button" class="popup__close" aria-label="Закрыть"></button>
         <h3 class="popup__title">Редактировать профиль</h3>
         <form class="popup__form" name="edit-profile" novalidate>
           <label class="popup__label">
@@ -75,14 +83,16 @@
             />
             <span class="popup__error" id="user-description-error"></span>
           </label>
+          <!-- Кнопка активна сразу (без валидации) -->
           <button type="submit" class="button popup__button">Сохранить</button>
         </form>
       </div>
     </div>
 
+    <!-- Попап добавления новой карточки -->
     <div class="popup popup_type_new-card">
       <div class="popup__content">
-        <button type="button" class="popup__close"></button>
+        <button type="button" class="popup__close" aria-label="Закрыть"></button>
         <h3 class="popup__title">Новое место</h3>
         <form class="popup__form" name="new-place" novalidate>
           <label class="popup__label">
@@ -112,14 +122,14 @@
             <span class="popup__error" id="place-link-error"></span>
           </label>
           <button type="submit" class="button popup__button popup__button_disabled" disabled>Создать</button>
-          <button type="submit" class="button popup__button">Создать</button>
         </form>
       </div>
     </div>
 
+    <!-- Попап обновления аватара -->
     <div class="popup popup_type_edit-avatar">
       <div class="popup__content">
-        <button type="button" class="popup__close"></button>
+        <button type="button" class="popup__close" aria-label="Закрыть"></button>
         <h3 class="popup__title">Обновить аватар</h3>
         <form class="popup__form" name="edit-avatar" novalidate>
           <label class="popup__label">
@@ -135,37 +145,33 @@
             <span class="popup__error" id="user-avatar-error"></span>
           </label>
           <button type="submit" class="button popup__button popup__button_disabled" disabled>Сохранить</button>
-
-          <button type="submit" class="button popup__button">Сохранить</button>
-
         </form>
       </div>
     </div>
 
-    <!-- Попап для изображения -->
-
-    <!-- Попап для изображения (его нет в предоставленном коде, но должен быть) -->
+    <!-- Попап просмотра изображения -->
     <div class="popup popup_type_image">
       <div class="popup__content popup__content_content_image">
-        <button type="button" class="popup__close"></button>
+        <button type="button" class="popup__close" aria-label="Закрыть"></button>
         <img class="popup__image" src="" alt="" />
         <p class="popup__caption"></p>
       </div>
     </div>
 
-    <!-- Скрипты и шаблоны -->
+    <!-- Подключение JavaScript -->
     <script src="./src/scripts/index.js" defer type="module"></script>
 
+    <!-- Шаблон для создания карточек -->
     <template id="card-template">
       <li class="places__item card">
         <img class="card__image" src="" alt="" />
         <div class="card__control">
-          <button type="button" class="card__control-button card__control-button_type_delete"></button>
+          <button type="button" class="card__control-button card__control-button_type_delete" aria-label="Удалить"></button>
         </div>
         <div class="card__description">
           <h2 class="card__title"></h2>
           <div class="card__likes">
-            <button type="button" class="card__like-button"></button>
+            <button type="button" class="card__like-button" aria-label="Поставить лайк"></button>
           </div>
         </div>
       </li>
