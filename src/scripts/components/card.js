@@ -40,7 +40,7 @@ export const createCardElement = (
     likeCountElement.textContent = data.likes ? data.likes.length : 0;
   }
   
-  // Проверяем, лайкнул ли пользователь эту карточку
+  // Проверяем, лайкнул ли пользователь данную карточку
   const isLikedByMe = data.likes && data.likes.some(like => like._id === userId);
   const currentLikesCount = data.likes ? data.likes.length : 0;
   
