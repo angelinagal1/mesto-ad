@@ -1,4 +1,4 @@
-    name: Deploy to Public Pages Repository
+name: Deploy to Public Pages Repository
 
 on:
   push:
